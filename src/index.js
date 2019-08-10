@@ -41,12 +41,28 @@ class MapContain extends React.Component {
   }
 }
 
-function FloatingButton(){
-  return (
-    <button className="floating-btn">
-      +
-    </button>
-  )
+class FloatingButton extends React.Component{
+  handleClick(){
+    console.log('hello')
+  }
+
+  render(){
+    return (
+      <button className="floating-btn" onClick={this.handleClick}>
+        +
+      </button>
+    )
+  }
+}
+
+class Report extends React.Component{
+  render(){
+    return (
+      <div>
+        
+      </div>
+    )
+  }
 }
 
 class Details extends React.Component {

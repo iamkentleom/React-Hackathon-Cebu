@@ -61,6 +61,13 @@ body {
   right: 20px;
   bottom: 20px;
   z-index: 1000;
+  -webkit-box-shadow: 5px 5px 27px -8px rgba(255,0,0,0.5);
+  -moz-box-shadow: 5px 5px 27px -8px rgba(255,0,0,0.5);
+  box-shadow: 5px 5px 27px -8px rgba(255,0,0,0.5);
+}
+
+.floating-btn:hover{
+  background-color: rgb(197, 0, 0);
 }
 
   /* ol, ul {
