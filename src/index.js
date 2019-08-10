@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
@@ -45,9 +46,11 @@ import GoogleMap from "./Components/GoogleMap";
 //   }
 // }
 
+
 class FloatingButton extends React.Component{
   handleClick(){
     console.log('hello')
+
   }
 
   render(){
@@ -58,59 +61,73 @@ class FloatingButton extends React.Component{
     )
   }
 }
-
-class Report extends React.Component{
-  render(){
-    return (
-      <div>
-        
-      </div>
-    )
-  }
 }
-
+ 
 class Details extends React.Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {isToggleOn: true};
+    constructor(props) {
+        super(props);
+        this.state = { isToggleOn: true };
 
-    this.handleClick = this.handleClick.bind(this);
-  }
+        this.handleClick = this.handleClick.bind(this);
+    }
 
-  handleClick() {
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
-    }));
-  }
+    handleClick() {
+        this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+        }));
+    }
 
-  render(){
-    return (
-      <div className={this.state.isToggleOn ? 'details' : 'details-full'} onClick={this.handleClick}>
-        <h2>Fire in Hogwarts</h2>
-        Location:<br/>
-        Latitude:<br/>
-        Longitude:<br/>
-        Reporters:<br/>
-        Details:<br/>
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div
+                className={this.state.isToggleOn ? "details" : "details-full"}
+                onClick={this.handleClick}
+            >
+                <h2>Fire in Hogwarts</h2>
+                Location:
+                <br />
+                Latitude:
+                <br />
+                Longitude:
+                <br />
+                Reporters:
+                <br />
+                Details:
+                <br />
+            </div>
+        );
+    }
 }
 
-function App(){
+function App() {
+    return HomeScreen();
+}
+
+function ReportScreen(){
+
   return (
     <div>
+        {/* <MapContainer /> */} 
+        
 
-      {/* <MapContainer /> */}
-      <GoogleMap/>
-      <FloatingButton />
-      <Details />
+
     </div>
-  )
+);
+
+  
+
+
 }
 
-ReactDOM.render(
-  <App/>,
-  document.getElementById('root')
-);
+function HomeScreen() {
+    return (
+        <div >
+            {/* <MapContainer /> */}
+            <GoogleMap />
+            <FloatingButton />
+            <Details />
+        </div>
+    );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
