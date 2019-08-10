@@ -43,6 +43,7 @@ function FloatingButton() {
 class FloatingButton extends React.Component{
   handleClick(){
     console.log('hello')
+
   }
 
   render(){
@@ -97,12 +98,23 @@ function App() {
 
 function ReportScreen(){
 
+  return (
+    <div>
+        {/* <MapContainer /> */} 
+        
+
+
+    </div>
+);
+
   
+
+
 }
 
 function HomeScreen() {
     return (
-        <div>
+        <div >
             {/* <MapContainer /> */}
             <GoogleMap />
             <FloatingButton />
