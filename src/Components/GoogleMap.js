@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
-
 import GoogleMapReact from 'google-map-react';
+
+
+const Marker = props => {
+  return <div className="pin"></div>
+}
+
 export class GoogleMap extends Component {
     static defaultProps = {
         center: {
-          lat: 59.95,
-          lng: 30.33
+          lat: 10.3193184,
+          lng: 123.90374449999999
         },
-        zoom: 11
+        zoom: 15
       };
      
       render() {
@@ -24,6 +29,7 @@ export class GoogleMap extends Component {
                 lng={30.337844}
                 text="My Marker"
               /> */}
+              <Marker lat={10.3193184} lng={123.90374449999999} />
             </GoogleMapReact>
           </div>
         );

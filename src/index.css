@@ -70,6 +70,14 @@ body {
   background-color: rgb(197, 0, 0);
 }
 
+
+.pin{
+  background-image: url("Assets/marker.png");
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  /* background-color: red; */
+}
   /* ol, ul {
     padding-left: 30px;
   }
