@@ -37,11 +37,24 @@ class MapContain extends React.Component {
         return <div className="map-size" />;
     }
 }
-
+ 
 function FloatingButton() {
-    return <button className="floating-btn">+</button>;
-}
+    return <button className="floating-btn">+</button>; 
+class FloatingButton extends React.Component{
+  handleClick(){
+    console.log('hello')
+  }
 
+  render(){
+    return (
+      <button className="floating-btn" onClick={this.handleClick}>
+        +
+      </button>
+    )
+  }
+}
+}
+ 
 class Details extends React.Component {
     constructor(props) {
         super(props);
@@ -80,6 +93,11 @@ class Details extends React.Component {
 
 function App() {
     return HomeScreen();
+}
+
+function ReportScreen(){
+
+  
 }
 
 function HomeScreen() {
