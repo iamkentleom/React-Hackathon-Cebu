@@ -16,11 +16,11 @@ class MapContainer extends React.Component {
     return (
       <Map
         google={this.props.google}
-        zoom={14}
+        zoom={4}
         style={mapStyles}
         initialCenter={{
-         lat: -1.2884,
-         lng: 36.8233
+         lat: -25.344,
+         lng: 131.036
         }}
       />
     );
@@ -39,6 +39,14 @@ class MapContain extends React.Component {
       </div>
     )
   }
+}
+
+function FloatingButton(){
+  return (
+    <button className="floating-btn">
+      +
+    </button>
+  )
 }
 
 class Details extends React.Component {
@@ -75,6 +83,7 @@ function App(){
     <div>
 
       <MapContainer />
+      <FloatingButton />
       <Details />
     </div>
   )
