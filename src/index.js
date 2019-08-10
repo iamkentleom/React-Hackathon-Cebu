@@ -9,7 +9,7 @@ import GoogleMap from "./Components/GoogleMap";
 // import GoogleMapReact from 'google-map-react';
 
 
-
+let report = false;
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
 // const mapStyles = {
 //   width: '100%',
@@ -49,15 +49,19 @@ import GoogleMap from "./Components/GoogleMap";
 
 class FloatingButton extends React.Component{
   handleClick(){
-    console.log('hello')
+    report = true
+    console.log(report)
 
   }
 
   render(){
     return (
-      <button className="floating-btn" onClick={this.handleClick}>
+      <div onClick={this.handleClick}>
+      <button className="floating-btn">
         +
       </button>
+      <ReportScreen/>
+      </div>
     )
   }
 }
@@ -84,15 +88,15 @@ class Details extends React.Component {
                 onClick={this.handleClick}
             >
                 <h2>Fire in Hogwarts</h2>
-                Location:
+                Location: Sitio Guso
                 <br />
-                Latitude:
+                Latitude: 10.667
                 <br />
-                Longitude:
+                Longitude: 3.777
                 <br />
-                Reporters:
+                Reporters: 12
                 <br />
-                Details:
+                Details: Very Hot
                 <br />
             </div>
         );
@@ -100,34 +104,53 @@ class Details extends React.Component {
 }
 
 function App() {
-    return HomeScreen();
+    return <HomeScreen/>;
 }
 
-function ReportScreen(){
-
-  return (
-    <div>
-        {/* <MapContainer /> */} 
-        
-
-
-    </div>
-);
-
+class ReportScreen extends React.Component{
   
+  handleClick(){
+    report = false
+    console.log(report)
+  }
 
-
-}
-
-function HomeScreen() {
-    return (
-        <div >
-            {/* <MapContainer /> */}
-            <GoogleMap />
-            <FloatingButton />
-            <Details />
+  render(){
+      return (
+        <div className={report ? "report" : "hide"}>
+            <button className="close" onClick={this.handleClick}>X</button>
+            <h2>REPORT A FIRE</h2>
+            Location: <input type="text" /> <br/> <p></p>
+            Houses Composition: <select>
+                <option value="week">Light Materials</option>
+                <option value="month">Mostly Concrete</option>
+                <option value="all">Strong Wood</option>
+                </select>
+                <br/> <p></p>
+            Photo: <input type="file" /> <br/> <p></p>
+            Additional Notes: <br/><textarea></textarea>
+            <button className="btn">REPORT</button>
         </div>
     );
+  }
+}
+  
+
+class HomeScreen extends React.Component {
+    // state = {
+    //   reporting: false
+    // }
+    render(){
+
+      return (
+          <div >
+              {/* <MapContainer /> */}
+              <GoogleMap />
+              <FloatingButton/>
+              <Details />
+              <ReportScreen/>
+          </div>
+      );
+    }
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
