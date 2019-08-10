@@ -61,7 +61,7 @@ class FloatingButton extends React.Component{
     )
   }
 }
-}
+
  
 class Details extends React.Component {
     constructor(props) {
