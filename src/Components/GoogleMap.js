@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 import GoogleMapReact from 'google-map-react';
+
+
+// import MapMarker from "./GoogleMap";
 export class GoogleMap extends Component {
     static defaultProps = {
         center: {
@@ -23,7 +26,9 @@ export class GoogleMap extends Component {
                 lat={59.955413}
                 lng={30.337844}
                 text="My Marker"
-              /> */}
+              /> */
+              // <MapMarker markerLocation = { defaultProps.center}/>
+              }
             </GoogleMapReact>
           </div>
         );

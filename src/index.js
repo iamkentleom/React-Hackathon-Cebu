@@ -1,99 +1,96 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
+import "./index.css";
 import GoogleMap from "./Components/GoogleMap";
 
-
-import GoogleMapReact from 'google-map-react';
-
+import GoogleMapReact from "google-map-react";
 
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
 const mapStyles = {
-  width: '100%',
-  height: '100%'
+    width: "100%",
+    height: "100%"
 };
 
 class MapContainer extends React.Component {
-  render() {
-    return (
-      <Map
-        google={this.props.google}
-        zoom={4}
-        style={mapStyles}
-        initialCenter={{
-         lat: 10.326273,
-         lng: 123.896922
-        }}
-      />
-    );
-  }
+    render() {
+        return (
+            <Map
+                google={this.props.google}
+                zoom={4}
+                style={mapStyles}
+                initialCenter={{
+                    lat: 10.326273,
+                    lng: 123.896922
+                }}
+            />
+        );
+    }
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyClD0yfdkOWAkjroWHOdfSqUYa4_N5B47Q'
+    apiKey: "AIzaSyClD0yfdkOWAkjroWHOdfSqUYa4_N5B47Q"
 })(MapContainer);
 
-
 class MapContain extends React.Component {
-  render(){
-    return (
-      <div className="map-size">
-      </div>
-    )
-  }
+    render() {
+        return <div className="map-size" />;
+    }
 }
 
-function FloatingButton(){
-  return (
-    <button className="floating-btn">
-      +
-    </button>
-  )
+function FloatingButton() {
+    return <button className="floating-btn">+</button>;
 }
 
 class Details extends React.Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {isToggleOn: true};
+    constructor(props) {
+        super(props);
+        this.state = { isToggleOn: true };
 
-    this.handleClick = this.handleClick.bind(this);
-  }
+        this.handleClick = this.handleClick.bind(this);
+    }
 
-  handleClick() {
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
-    }));
-  }
+    handleClick() {
+        this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+        }));
+    }
 
-  render(){
+    render() {
+        return (
+            <div
+                className={this.state.isToggleOn ? "details" : "details-full"}
+                onClick={this.handleClick}
+            >
+                <h2>Fire in Hogwarts</h2>
+                Location:
+                <br />
+                Latitude:
+                <br />
+                Longitude:
+                <br />
+                Reporters:
+                <br />
+                Details:
+                <br />
+            </div>
+        );
+    }
+}
+
+function App() {
+    return HomeScreen();
+}
+
+function HomeScreen() {
     return (
-      <div className={this.state.isToggleOn ? 'details' : 'details-full'} onClick={this.handleClick}>
-        <h2>Fire in Hogwarts</h2>
-        Location:<br/>
-        Latitude:<br/>
-        Longitude:<br/>
-        Reporters:<br/>
-        Details:<br/>
-      </div>
-    )
-  }
+        <div>
+            {/* <MapContainer /> */}
+            <GoogleMap />
+            <FloatingButton />
+            <Details />
+        </div>
+    );
 }
 
-function App(){
-  return (
-    <div>
-
-      {/* <MapContainer /> */}
-      <GoogleMap/>
-      <FloatingButton />
-      <Details />
-    </div>
-  )
-}
-
-ReactDOM.render(
-  <App/>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById("root"));
