@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import './index.css';
+import GoogleMap from "./Components/GoogleMap";
 
 
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import GoogleMapReact from 'google-map-react';
 
+
+// const AnyReactComponent = ({ text }) => <div>{text}</div>;
 const mapStyles = {
   width: '100%',
   height: '100%'
@@ -98,7 +101,8 @@ function App(){
   return (
     <div>
 
-      <MapContainer />
+      {/* <MapContainer /> */}
+      <GoogleMap/>
       <FloatingButton />
       <Details />
     </div>
