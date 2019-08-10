@@ -1,45 +1,52 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
-import "./index.css";
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+// import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
+import './index.css';
 import GoogleMap from "./Components/GoogleMap";
 
-import GoogleMapReact from "google-map-react";
+
+// import GoogleMapReact from 'google-map-react';
+
+
 
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
-const mapStyles = {
-    width: "100%",
-    height: "100%"
-};
+// const mapStyles = {
+//   width: '100%',
+//   height: '100%'
+// };
 
-class MapContainer extends React.Component {
-    render() {
-        return (
-            <Map
-                google={this.props.google}
-                zoom={4}
-                style={mapStyles}
-                initialCenter={{
-                    lat: 10.326273,
-                    lng: 123.896922
-                }}
-            />
-        );
-    }
-}
+// class MapContainer extends React.Component {
+//   render() {
+//     return (
+//       <Map
+//         google={this.props.google}
+//         zoom={4}
+//         style={mapStyles}
+//         initialCenter={{
+//          lat: -25.344,
+//          lng: 131.036
+//         }}
+//       />
+//     );
+//   }
+// }
 
-export default GoogleApiWrapper({
-    apiKey: "AIzaSyClD0yfdkOWAkjroWHOdfSqUYa4_N5B47Q"
-})(MapContainer);
+// export default GoogleApiWrapper({
+//   apiKey: 'AIzaSyClD0yfdkOWAkjroWHOdfSqUYa4_N5B47Q'
+// })(MapContainer);
 
-class MapContain extends React.Component {
-    render() {
-        return <div className="map-size" />;
-    }
-}
- 
-function FloatingButton() {
-    return <button className="floating-btn">+</button>; 
+
+// class MapContain extends React.Component {
+//   render(){
+//     return (
+//       <div className="map-size">
+//       </div>
+//     )
+//   }
+// }
+
+
 class FloatingButton extends React.Component{
   handleClick(){
     console.log('hello')
